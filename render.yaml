@@ -2,12 +2,21 @@ services:
   - type: web
     name: n8n-on-render
     env: docker
+    repo: https://github.com/your-username/your-repo-name
+    branch: main
     plan: free
-    autoDeploy: true
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
-        value: admin
+        value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: admin123
+        value: "hieucute1251999"
+      - key: WEBHOOK_URL
+        value: https://n8n-on-render.onrender.com/
+      - key: GENERIC_TIMEZONE
+        value: Asia/Ho_Chi_Minh
+    disk:
+      name: n8n-data
+      mountPath: /home/node/.n8n
+      sizeGB: 1
